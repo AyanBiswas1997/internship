@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Total Data Science</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+
+<img src=
+"c:\Users\AYAN\Downloads\vecteezy_spaghetti-with-tomatoes-beans-and-vegetables-on-a-wooden_30095491.jpg"
+         alt="image", width="400", height="200", style="float:left">
+
+<img src=
+"https://www.google.com/url?sa=i&url=https%3A%2F%2Finc42.com%2Ffeatures%2Fzomato-vs-swiggy-will-ma-spree-solve-profit-puzzle-for-food-delivery-giants%2F&psig=AOvVaw0VtXHZD5jizgxLXSEABlXl&ust=1721371009204000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJjP7eb8r4cDFQAAAAAdAAAAABAJ"
+         alt="image", width="800", height="500", style="float:right">
+
+<style>
+body {
+  background-image: url("https://miro.medium.com/v2/resize:fit:1100/format:webp/0*VR6aT6sn3dBWBPl1.png");
+  background-position:200%;
+  background-size:auto;
+  background-size: cover;
+  background-color:white;
+  background-repeat: no-repeat;
+}
+</style>
+
+
+
+ <div class="login">
+	<h1>Zomato</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Online Order" placeholder="Order Online" required="required" />
+        <input type="text" name="Book Table" placeholder="Book Table" required="required" />
+		<input type="text" name="Votes" placeholder="Votes" required="required" />
+        <input type="text" name="Location" placeholder="Location" required="required" />
+        <input type="text" name="rest_Type" placeholder="Restaurant Type" required="required" />
+        <input type="text" name="Cuisines" placeholder="Cuisines" required="required" />
+        <input type="text" name="Cost" placeholder="Cost" required="required" />
+        <input type="text" name="Menu Item" placeholder="Menu Item" required="required" />
+        <input type="text" name="dish liked" placeholder="dish liked" required="required" />
+        <input type="text" name="avg cost" placeholder="avr cost" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
